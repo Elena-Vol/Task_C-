@@ -5,18 +5,20 @@
 Console.WriteLine("введите номер четверти ");
 string quarter = Console.ReadLine();
 
-    string diapozon = Diapozon(quarter);
-    Console.WriteLine($"соответсвует диапозону координат {diapozon}");
+string diapozon = Diapozon(quarter);
+Console.WriteLine(diapozon);
 
 string Diapozon(string qr)
 {
-    if (qr == 1) return "x > 0, y > 0";
-    if (qr == 2) return "x < 0, y > 0";
-    if (qr == 3) return "x < 0, y < 0";
-    if (qr == 4) return "x > 0, y < 0";
-    return "введено не корректное значение";
+    switch (qr)
+    {
+        case "1": return "Допустимые координаты: x > 0 и y > 0";
+        case "2": return "Допустимые координаты: x < 0 и y > 0";
+        case "3": return "Допустимые координаты: x < 0 и y < 0";
+        case "4": return "Допустимые координаты: x > 0 и y < 0";
+        default: return "Неккоректный ввод!";
+    }
 }
-
 
 
 
