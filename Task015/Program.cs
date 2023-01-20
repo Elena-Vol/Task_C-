@@ -22,7 +22,8 @@ else Console.WriteLine("нет");
     
 
 
-/* string PrintDay(int number)
+/* Реализовано через метод со строковой переменной
+string PrintDay(int number)
 {
    if (number < 1 || number > 7 ) return "Введено некорректное число";
     else if (number == 1) return $"{number} - не является выходным днем";
