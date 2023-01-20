@@ -10,19 +10,18 @@ int ThirdDigit (int number)
 {
 if (number > 99 && number <1000)
 {
-    int thirdDigit = number % 10;
-    return thirdDigit;
+    return number % 10;
 }
 else 
  {
-   int count = number;
-   while (count > 1000) 
+   // int count = number;
+   while (number > 1000) 
    {
-        int digit = count % 10;
-        count = (count - digit) / 10 ;              
+        // int digit = number % 10;
+        number = (number - number % 10) / 10 ;              
    }
-  int thirdDigit = count % 10;    
-  return thirdDigit;
+  // int thirdDigit = number % 10;    
+  return number % 10;
  }
 }
 
