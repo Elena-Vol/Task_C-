@@ -25,7 +25,10 @@ void PrintArray(int[] arr)
 }
 
 int[] array = GenerateArray(8, 0, 10);
-PrintArray(array); Console.Write(" -> [ "); PrintArray(array); Console.WriteLine("]");
+PrintArray(array); 
+Console.Write(" -> [ "); 
+PrintArray(array); 
+Console.WriteLine("]");
 
 
 
