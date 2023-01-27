@@ -42,7 +42,7 @@ int GetQuantEven (int[] array)
 int[] arr = CreateArrayRndInt(11, 100, 1000);
 PrintArray(arr);
 int quantEven = GetQuantEven(arr);
-Console.WriteLine($"кол-во  положительный чисел в массиве: {quantEven}");
+Console.WriteLine($"кол-во  четных чисел в массиве: {quantEven}");
 
 
 
