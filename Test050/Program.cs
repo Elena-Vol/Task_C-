@@ -48,7 +48,10 @@ int collunm = Convert.ToInt32(Console.ReadLine());
 
 int[,] array2D = CreateMatrixRndInt(3, 4, 0, 10);
 PrintMatrix(array2D);
-if (DiapozonMatrix(array2D, row, collunm))  Console.WriteLine($"Значение элемента массива с индексом [{row}, {collunm}] равно: {array2D[row, collunm]}");
+if (DiapozonMatrix(array2D, row, collunm))  
+{
+    Console.WriteLine($"Значение элемента массива с индексом [{row}, {collunm}] равно: {array2D[row, collunm]}");
+}
 else Console.WriteLine("такого числа в массиве нет");
 
 
