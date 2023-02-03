@@ -41,7 +41,7 @@ void PrintArrayDouble(double[] array)
     Console.Write("[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i], 3}; ");
+        if (i < array.Length - 1) Console.Write($"{array[i]}; ");
         else Console.Write($"{array[i]}");
     }
     Console.WriteLine("]");
@@ -66,4 +66,5 @@ double[] CreateArrayArithMean(int[,] matrix)
 int[,] array2D = CreateMatrixRndInt(3, 4, -0, 10);
 PrintMatrix(array2D);
 double[] arrayArithMean = CreateArrayArithMean(array2D);
+Console.WriteLine("Среднеарифметическое каждого столбца :");
 PrintArrayDouble(arrayArithMean);
