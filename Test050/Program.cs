@@ -28,15 +28,15 @@ void PrintMatrix(int[,] matrix)
         Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j], 3} | ");
-            else Console.Write($"{matrix[i,j], 3} ");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3} | ");
+            else Console.Write($"{matrix[i, j],3} ");
         }
         Console.WriteLine("|");
     }
 }
 
 
-bool DiapozonMatrix (int[,] matr, int rows, int collunms)
+bool DiapozonMatrix(int[,] matr, int rows, int collunms)
 {
     return (rows < matr.GetLength(0)) && (collunms < matr.GetLength(1));
 }
@@ -46,13 +46,20 @@ int row = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите номер столбца ");
 int collunm = Convert.ToInt32(Console.ReadLine());
 
-int[,] array2D = CreateMatrixRndInt(3, 4, 0, 10);
-PrintMatrix(array2D);
-if (DiapozonMatrix(array2D, row, collunm))  
+if (row < 0 || collunm < 0)
 {
-    Console.WriteLine($"Значение элемента массива с индексом [{row}, {collunm}] равно: {array2D[row, collunm]}");
+    Console.WriteLine("введены некорректные номера строк и столбцов");
 }
-else Console.WriteLine("такого числа в массиве нет");
+else
+{
+    int[,] array2D = CreateMatrixRndInt(3, 4, 0, 10);
+    PrintMatrix(array2D);
+    if (DiapozonMatrix(array2D, row, collunm))
+    {
+        Console.WriteLine($"Значение элемента массива с индексом [{row}, {collunm}] равно: {array2D[row, collunm]}");
+    }
+    else Console.WriteLine("такого числа в массиве нет");
+}
 
 
 
