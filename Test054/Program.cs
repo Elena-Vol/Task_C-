@@ -39,58 +39,113 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int[,] MaxMinRows(int[,] matrix)
+
+
+int[,] SortMatrixBublle(int[,] matrix)
 {
-    int[,] matrixMN = new int[matrix.GetLength(0), matrix.GetLength(1)];
-    //int max = matrix[0, 0];
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    int temp = 0;
+    for (int bublle = 0; bublle < matrix.GetLength(1); bublle++)
     {
-        // matrixMN[i, 0] = matrix[i, 0];
-
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int sort = bublle + 1; sort < matrix.GetLength(1); sort++)
         {
-            if (matrix[i, j] > matrix[i, j + 1])
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                matrixMN[i, j] = matrix[i, j + 1];
+                if (matrix[i, bublle] < matrix[i, sort])
+                {
+                    temp = matrix[i, bublle];
+                    matrix[i, bublle] = matrix[i, sort];
+                    matrix[i, sort] = temp;
+                }
             }
-            else matrixMN[i, j] = matrix[i, j];
         }
-
     }
-    return matrixMN;
+    return matrix;
 }
 
 
-
-int[,] array2D = CreateMatrixRndInt(3, 4, 0, 10);
+int[,] array2D = CreateMatrixRndInt(3, 4, -10, 10);
 PrintMatrix(array2D);
 Console.WriteLine();
-int[,] maxMinRows = MaxMinRows(array2D);
-PrintMatrix(maxMinRows);
+int[,] sortMatrixBublle = SortMatrixBublle(array2D);
+PrintMatrix(array2D);
+ 
 
 
 
 
-/* void MaxMinRows(int[,] matrix)
+
+
+
+
+
+
+/*
+int[] CreateArrayRndInt(int size, int min, int max)
 {
-    int max = matrix[0, 0];
-    for (int j = 1; j < matrix.GetLength(1); j++)
+    int[] array = new int[size];
+    Random rnd = new Random();
+    for (int i = 0; i < array.Length; i++)
     {
-         // int max = matrix[0, j];
+        array[i] = rnd.Next(min, max + 1);
+    }
+    return array;
+}
 
-        for (int i = 1; i < matrix.GetLength(0)-1; i++)
+void PrintArray(int[] array)
+{
+    Console.bublle("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) Console.bublle($"{array[i]}, ");
+        else Console.bublle($"{array[i]}");
+    }
+    Console.bublleLine("]");
+}
+
+void bublle(int[] arr)
+{
+    int temp = 0;
+    for (int bublle = 0; bublle < arr.Length; bublle++)
+    {
+        for (int sort = 0; sort < arr.Length - 1; sort++)
         {
-            int tmp = matrix[i, j];
-            // int max = matrix[i, j];
-            if (matrix[i, j] > max)
+            if (arr[sort] < arr[sort + 1])
             {
-                tmp = max;
-                max = matrix[i, j];
-                matrix[i, j] = tmp;
+                temp = arr[sort + 1];
+                arr[sort + 1] = arr[sort];
+                arr[sort] = temp;
             }
         }
     }
-} */
+    for (int i = 0; i < arr.Length; i++)
+        Console.bublle(arr[i] + " ");
+    Console.ReadKey();
+
+}
 
 
+int[] BubbleSort(int[] mas)
+{
+    int temp;
+    for (int i = 0; i < mas.Length; i++)
+    {
+        for (int j = i + 1; j < mas.Length; j++)
+        {
+            if (mas[i] < mas[j])
+            {
+                temp = mas[i];
+                mas[i] = mas[j];
+                mas[j] = temp;
+            }
+        }
+    }
+    return mas;
+}
 
+
+int[] array = CreateArrayRndInt(5, 0, 10);
+PrintArray(array);
+Console.bublleLine();
+int[] bubbleSort = BubbleSort(array);
+PrintArray(bubbleSort);
+//bublle(array);  */
