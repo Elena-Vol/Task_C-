@@ -24,9 +24,9 @@ int Akkerman(int n, int m)
       return Akkerman(n - 1, Akkerman(n, m - 1));
 }
 
-Console.WriteLine("Введите число: ");
+Console.WriteLine("Введите  первое не отрицательное число: ");
 int numA = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число: ");
+Console.WriteLine("Введите второе не отрицательное число: ");
 int numB = Convert.ToInt32(Console.ReadLine());
 
 if (numA < 0) numA = numA * (-1);
