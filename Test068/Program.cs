@@ -18,19 +18,19 @@ int Akkerman(int n, int m)
   if (n == 0)
     return m + 1;
   else
-    if ((n != 0) && (m == 0))
+    if ((m == 0) && (m == 0))         
       return Akkerman(n - 1, 1);
     else
       return Akkerman(n - 1, Akkerman(n, m - 1));
 }
 
 Console.WriteLine("Введите число: ");
-int numA = Convert.ToInt64(Console.ReadLine());
+int numA = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите число: ");
-int numB = Convert.ToInt64(Console.ReadLine());
+int numB = Convert.ToInt32(Console.ReadLine());
 
 if (numA < 0) numA = numA * (-1);
 if (numB < 0) numB = numB * (-1);
 
 int akkerman = Akkerman(numA, numB);
-Console.WriteLine($"сумма натуральных элементов в промежутке от {numA} до {numB} равна: {akkerman}");
+Console.WriteLine($"вычисления функции Аккермана двух чисел {numA} {numB} равно: {akkerman}");
