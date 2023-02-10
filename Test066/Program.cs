@@ -4,16 +4,17 @@
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30 */
 
-Console.WriteLine("Введите число: ");
+Console.WriteLine("Введите натуральное число: ");
 int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число: ");
+Console.WriteLine("Введите натуральное число: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-if (m < 0) m = m * (-1);
-if (n < 0) n = n * (-1);
-
+if (m < 0 || n < 0) Console.WriteLine($"введены некорректные значения");
+else
+{
 int summOfDigits = SumOfDigits(m, n);
 Console.WriteLine($"сумма натуральных элементов в промежутке от {m} до {n} равна: {summOfDigits}");
+}
 
 
 int SumOfDigits(int numM, int numN)
@@ -23,6 +24,8 @@ int SumOfDigits(int numM, int numN)
 
     else return numN + SumOfDigits(numM, numN + 1);
 }
+
+
 
 
 
