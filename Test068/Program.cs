@@ -33,4 +33,4 @@ if (numA < 0) numA = numA * (-1);
 if (numB < 0) numB = numB * (-1);
 
 int akkerman = Akkerman(numA, numB);
-Console.WriteLine($"вычисления функции Аккермана двух чисел {numA} {numB} равно: {akkerman}");
+Console.WriteLine($"вычисления функции Аккермана двух модулей чисел {numA} {numB} равно: {akkerman}");
